@@ -446,3 +446,258 @@ footer {
     transform: none;
   }
 }
+
+/* =================================
+   MOBILE EXPERIENCE IMPROVEMENTS
+================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    min-height: 100svh;
+    padding: 100px 7%;
+    justify-content: center;
+  }
+
+  /* INTRO */
+
+  .hero {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+  }
+
+  .hero-title {
+    font-size: clamp(76px, 19vw, 108px);
+    letter-spacing: -3px;
+    line-height: 1.12;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+    line-height: 1.9;
+    margin-top: 28px;
+  }
+
+  .explore-btn {
+    font-size: 16px;
+    padding: 17px 34px;
+    margin-top: 42px;
+  }
+
+  .scroll-note {
+    font-size: 10px;
+    letter-spacing: 3px;
+    bottom: 30px;
+  }
+
+  /* CHAPTERS */
+
+  .chapter {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  .chapter-no {
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 32px;
+  }
+
+  h2 {
+    font-size: clamp(48px, 12vw, 65px);
+    line-height: 1.22;
+    margin-bottom: 28px;
+  }
+
+  .chapter > p {
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 100%;
+  }
+
+  .floating-emoji {
+    font-size: 48px;
+    right: 9%;
+    bottom: 12%;
+  }
+
+  /* MAIN HINDI QUOTE */
+
+  .quote-section {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .big-quote {
+    font-size: clamp(36px, 9.5vw, 49px);
+    line-height: 1.65;
+    letter-spacing: 0;
+  }
+
+  .quote-mark {
+    font-size: 85px;
+    height: 65px;
+  }
+
+  .quote-section p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* PHOTO */
+
+  .photo-section {
+    padding: 75px 7%;
+  }
+
+  .photo-frame {
+    width: min(86vw, 390px);
+    padding: 9px;
+  }
+
+  .khyati-photo {
+    width: 100%;
+    min-height: 300px;
+    max-height: 65svh;
+    object-fit: cover;
+  }
+
+  /* PERSONAL MESSAGE */
+
+  .message-card {
+    width: 100%;
+    padding: 28px 22px;
+    border-radius: 18px;
+  }
+
+  .personal-message {
+    font-size: clamp(32px, 8.5vw, 44px) !important;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    margin-bottom: 0;
+  }
+
+  /* TERMS */
+
+  .fun-section {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .fun-section h2 {
+    font-size: 42px;
+  }
+
+  .terms {
+    width: 100%;
+    padding: 23px 18px;
+    font-size: 14px;
+    line-height: 2.5;
+  }
+
+  .stamp {
+    font-size: 13px;
+    padding: 14px 20px;
+    margin-top: 38px;
+  }
+
+  /* FINAL */
+
+  .final-section {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  .final-section h2 {
+    font-size: clamp(55px, 13vw, 75px);
+  }
+
+  .final-section > p {
+    font-size: 17px;
+    line-height: 1.9;
+  }
+
+  .final-btn {
+    font-size: 16px;
+    padding: 17px 30px;
+  }
+
+  .signature {
+    font-size: 19px;
+    margin-top: 65px;
+  }
+
+  .surprise h2 {
+    font-size: 42px;
+  }
+
+  footer {
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 25px 12px;
+  }
+
+  /* SOFTER TOUCH GLOW */
+
+  .cursor-glow {
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(
+      circle,
+      rgba(0, 117, 255, .19),
+      rgba(0, 80, 255, .07) 45%,
+      transparent 72%
+    );
+  }
+}
+
+/* SMALLER PHONES */
+
+@media (max-width: 380px) {
+
+  .hero-title {
+    font-size: 72px;
+  }
+
+  .big-quote {
+    font-size: 34px;
+  }
+
+  .personal-message {
+    font-size: 30px !important;
+  }
+
+  .terms {
+    font-size: 13px;
+  }
+
+}
+
+/* TABLETS */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  section {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  .hero-title {
+    font-size: 100px;
+  }
+
+  .big-quote {
+    font-size: 55px;
+  }
+
+}
