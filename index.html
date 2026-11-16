@@ -2,524 +2,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#071b29">
-<title>For My Sister | Hemant</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#03040a">
+  <title>For Khyati ✦</title>
 
-<style>
-:root {
-  --bg: #071b29;
-  --panel: #102d3b;
-  --teal: #43d9c3;
-  --gold: #ffd166;
-  --white: #f4fbff;
-}
+  <link rel="stylesheet" href="style.css">
 
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  min-height: 100svh;
-  background:
-    radial-gradient(ellipse at 50% 15%, #174555 0%, transparent 48%),
-    var(--bg);
-  color: var(--white);
-  font-family: system-ui, sans-serif;
-  text-align: center;
-  overflow-x: hidden;
-}
-
-button { font: inherit; }
-
-.page {
-  width: min(100% - 28px, 650px);
-  margin: auto;
-  padding: 28px 0 24px;
-  position: relative;
-  z-index: 1;
-}
-
-.tag {
-  color: var(--teal);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
-h1 {
-  font-size: clamp(30px, 8vw, 49px);
-  line-height: 1.1;
-  margin: 12px 0;
-  letter-spacing: -1.5px;
-}
-
-h1 span { color: var(--gold); }
-
-.subtitle {
-  color: #bdd0d9;
-  font-size: 14px;
-  margin: 0 auto;
-  max-width: 330px;
-  line-height: 1.7;
-}
-
-.scene {
-  margin: 23px auto 18px;
-  width: 100%;
-  max-width: 420px;
-  position: relative;
-  border: 1px solid #3d7380;
-  border-radius: 25px;
-  overflow: hidden;
-  background: linear-gradient(155deg, #12394a, #0b2434 72%);
-  box-shadow: 0 12px 50px #0005;
-}
-
-.scene svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.glow {
-  position: absolute;
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  background: #43d9c322;
-  filter: blur(30px);
-  top: 10px;
-  left: calc(50% - 85px);
-  pointer-events: none;
-}
-
-#boyHead {
-  transform-box: view-box;
-  transform-origin: 160px 220px;
-  animation: rest 3s ease-in-out infinite;
-}
-
-#girlBody {
-  transform-box: view-box;
-  transform-origin: 270px 200px;
-  animation: breathe 4s ease-in-out infinite;
-}
-
-@keyframes rest {
-  0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50% { transform: translateY(2px) rotate(1deg); }
-}
-
-@keyframes breathe {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
-}
-
-.scene-caption {
-  padding: 0 12px 17px;
-  font-size: 12px;
-  color: #d0e5e9;
-}
-
-.dialogue {
-  background: linear-gradient(135deg, #183b47, #102c3a);
-  border: 1px solid #416c76;
-  border-radius: 19px;
-  padding: 20px 14px;
-  margin: 16px 0;
-}
-
-.dialogue .small {
-  color: var(--teal);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
-.dialogue h2 {
-  color: var(--gold);
-  font-size: clamp(19px, 5.4vw, 28px);
-  line-height: 1.4;
-  margin: 10px 0 0;
-}
-
-.song-note {
-  font-size: 12px;
-  color: #bfd4de;
-  line-height: 1.6;
-  margin: 17px 0;
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.btn {
-  border: 0;
-  border-radius: 999px;
-  padding: 12px 17px;
-  font-weight: 750;
-  font-size: 13px;
-  cursor: pointer;
-  transition: transform .2s, filter .2s;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.btn:active { transform: scale(.96); }
-
-.primary {
-  color: #08242c;
-  background: var(--teal);
-}
-
-.secondary {
-  color: var(--white);
-  background: #173746;
-  border: 1px solid #456777;
-}
-
-.surprise {
-  display: none;
-  margin-top: 16px;
-  padding: 19px 15px;
-  border: 1px dashed var(--gold);
-  border-radius: 17px;
-  background: #ffd1660b;
-  animation: appear .45s ease both;
-}
-
-.surprise.show { display: block; }
-
-.surprise h3 {
-  color: var(--gold);
-  margin: 0 0 9px;
-}
-
-.surprise p {
-  color: #d9e8ee;
-  font-size: 14px;
-  line-height: 1.8;
-  margin: 0;
-}
-
-.signature {
-  margin-top: 24px;
-  font-size: 13px;
-  color: #9dbbc8;
-}
-
-.signature strong {
-  color: var(--gold);
-  font-size: 18px;
-}
-
-.star {
-  position: fixed;
-  z-index: 0;
-  pointer-events: none;
-  color: var(--gold);
-  animation: rise var(--duration, 4s) ease-out forwards;
-}
-
-@keyframes rise {
-  from { opacity: 0; transform: translateY(0) scale(.6) rotate(0); }
-  20% { opacity: .85; }
-  to { opacity: 0; transform: translateY(-150px) scale(1.5) rotate(60deg); }
-}
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-footer {
-  color: #668895;
-  font-size: 10px;
-  margin-top: 20px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-@media (max-width: 380px) {
-  .page { width: calc(100% - 20px); padding-top: 22px; }
-  .scene { margin-top: 17px; }
-  .dialogue { padding: 16px 10px; }
-  .btn { padding: 11px 13px; }
-}
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<main class="page">
 
-  <div class="tag">A little something for you ✦</div>
+  <div class="cursor-glow" id="glow"></div>
+  <canvas id="particles"></canvas>
 
-  <h1>My Sister.<br><span>My Family.</span></h1>
+  <audio id="music" src="song.mp3" loop preload="auto"></audio>
 
-  <p class="subtitle">
-    Alag personalities, alag dimaag…<br>
-    par family toh family hoti hai. 🤝
-  </p>
+  <button class="music-btn" id="musicBtn">♫ <span>Play music</span></button>
 
-  <section class="scene" aria-label="An animated illustration of a brother resting respectfully in his sister's lap">
-    <div class="glow"></div>
+  <main>
 
-    <svg viewBox="0 0 360 310" role="img"
-         aria-label="A brother resting his head in his sister's lap while she sits beside him">
-      <defs>
-        <linearGradient id="dress" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#43d9c3"/>
-          <stop offset="1" stop-color="#188b91"/>
-        </linearGradient>
-        <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#ffd166"/>
-          <stop offset="1" stop-color="#d99b36"/>
-        </linearGradient>
-      </defs>
+    <!-- INTRO -->
+    <section class="hero">
 
-      <!-- Tiny stars -->
-      <g fill="#ffd166" opacity=".8">
-        <path d="M42 49 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"/>
-        <path d="M307 42 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z"/>
-        <circle cx="75" cy="105" r="2"/>
-        <circle cx="290" cy="112" r="2"/>
-        <circle cx="55" cy="150" r="1.5"/>
-      </g>
+      <div class="eyebrow">A LITTLE SOMETHING FOR YOU</div>
 
-      <!-- Floor / shared cushion -->
-      <ellipse cx="181" cy="267" rx="143" ry="20"
-               fill="#071721" opacity=".6"/>
-      <path d="M43 254 Q175 231 315 254 L305 277 Q180 297 53 277Z"
-            fill="#1b4858" stroke="#397281" stroke-width="1.5"/>
+      <h1 class="hero-title">
+        Hey,<br>
+        <span>Khyati.</span>
+      </h1>
 
-      <!-- Girl seated: legs and clothing -->
-      <g id="girlBody">
-        <path d="M210 152 Q242 143 265 164
-                 L299 221 Q309 239 288 249
-                 Q265 259 252 235 L217 202Z"
-              fill="url(#dress)"/>
+      <p class="hero-subtitle">
+        Before you scroll away...<br>
+        I have something to say.
+      </p>
 
-        <path d="M208 182 Q180 207 147 233
-                 Q135 245 151 255
-                 Q167 264 184 248
-                 L240 214 Q257 200 242 184Z"
-              fill="#188b91"/>
+      <button class="explore-btn" onclick="startStory()">
+        Let's talk <span>↓</span>
+      </button>
 
-        <!-- Torso -->
-        <path d="M218 77 Q244 67 259 94
-                 L275 166 Q250 188 210 172
-                 L198 119 Q194 93 218 77Z"
-              fill="url(#dress)"/>
+      <div class="scroll-note">SCROLL TO CONTINUE</div>
 
-        <!-- Neck -->
-        <path d="M226 66 L228 91 L246 93 L245 68Z"
-              fill="#bd805f"/>
+    </section>
 
-        <!-- Head -->
-        <ellipse cx="230" cy="51" rx="28" ry="31" fill="#d9a17d"/>
 
-        <!-- Hair -->
-        <path d="M202 54 Q191 17 222 12
-                 Q256 6 261 37
-                 Q260 53 251 61
-                 L249 36 Q231 44 210 31
-                 L209 57Z"
-              fill="#17212b"/>
+    <!-- CHAPTER 1 -->
+    <section class="chapter reveal">
 
-        <!-- Ear and simple face -->
-        <ellipse cx="255" cy="54" rx="5" ry="8" fill="#d9a17d"/>
-        <circle cx="237" cy="50" r="1.7" fill="#26323b"/>
-        <path d="M237 61 Q244 66 249 60"
-              stroke="#8b5144" stroke-width="1.8"
-              fill="none" stroke-linecap="round"/>
+      <h2>So... about<br>that <span>incident.</span></h2>
 
-        <!-- Arm resting gently near brother -->
-        <path d="M207 102 Q183 130 160 173
-                 Q153 188 165 194
-                 Q176 198 184 182
-                 L227 133Z"
-              fill="#d9a17d"/>
+      <p>
+        are sunata huuu na tujhe gaaanaaaa bina once view keeeee
+      </p>
 
-        <!-- Hand near boy's shoulder -->
-        <path d="M159 174 Q148 172 147 183
-                 Q148 194 160 194 L172 187Z"
-              fill="#d9a17d"/>
-      </g>
+      <div class="floating-emoji">✦</div>
 
-      <!-- Boy reclining sideways across her lap -->
-      <g id="boyHead">
-        <!-- Body -->
-        <path d="M65 229 Q72 201 105 198
-                 L149 207 Q172 218 169 242
-                 L156 263 L83 261 Q63 251 65 229Z"
-              fill="url(#shirt)"/>
+    </section>
 
-        <!-- Sleeve -->
-        <path d="M102 202 Q126 201 141 218
-                 L123 240 L99 226Z"
-              fill="#e8b44d"/>
 
-        <!-- Neck -->
-        <path d="M148 192 L160 205 L146 218 L133 207Z"
-              fill="#b97c5b"/>
+    <!-- CHAPTER 2 -->
+    <section class="chapter quote-section reveal">
 
-        <!-- Head resting on lap -->
-        <g transform="rotate(-14 150 193)">
-          <ellipse cx="150" cy="190" rx="28" ry="24"
-                   fill="#c9906c"/>
-          <!-- Hair -->
-          <path d="M123 187 Q120 162 143 162
-                   Q169 159 179 181
-                   L169 179 Q152 186 132 179Z"
-                fill="#202b34"/>
-          <!-- Closed eyes -->
-          <path d="M158 194 Q163 198 168 194"
-                stroke="#583e35" stroke-width="2"
-                fill="none" stroke-linecap="round"/>
-          <path d="M136 191 Q140 195 144 191"
-                stroke="#583e35" stroke-width="2"
-                fill="none" stroke-linecap="round"/>
-          <!-- Nose -->
-          <path d="M151 195 L147 201 L153 202"
-                stroke="#986348" stroke-width="1.5"
-                fill="none" stroke-linecap="round"/>
-        </g>
+      <div class="chapter-no">02 / IMPORTANT QUESTION</div>
 
-        <!-- Arm resting on own body -->
-        <path d="M88 218 Q106 233 126 236
-                 Q136 238 134 247
-                 Q131 256 120 251
-                 L79 239Z"
-              fill="#c9906c"/>
-      </g>
+      <div class="quote-mark">“</div>
 
-      <!-- Tiny decorative heart-free sparkle -->
-      <g fill="#43d9c3">
-        <path d="M316 166 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z"/>
-        <circle cx="32" cy="207" r="2"/>
-      </g>
-    </svg>
+      <h2 class="big-quote">
+        तेरा नंबर डिलीट कर दूँगा तो बात किससे करूँगा?
+      </h2>
 
-    <div class="scene-caption">
-      Bas ek chhota sa reminder: siblings ka bond is special. ✨
-    </div>
-  </section>
+      <div class="blue-line"></div>
 
-  <section class="dialogue">
-    <div class="small">EK ZAROORI BAAT 😂</div>
-    <h2>AGR TU ROYI,<br>
-      GOLI MAAAAR DUGAAAAA</h2>
-  </section>
+      <p>Think about it. It's a genuine logistical problem.</p>
 
-  <p class="song-note">
-    🎧 BTW YE SONG MAINE APNE LIYE LAGAYA H<br>
-    (FAVOURITE H MERA)
-  </p>
+    </section>
 
-  <div class="actions">
-    <button class="btn primary" id="musicBtn">▶ Play Song</button>
-    <button class="btn secondary" id="surpriseBtn">✨ Surprise Kholo</button>
-  </div>
 
-  <section class="surprise" id="surprise">
-    <h3>Oye, sun na! 😎</h3>
-    <p>
-      Tu meri sister hai, aur apne siblings ke saath
-      nok-jhok toh banti hai! 😂<br>
-      Hamesha khush reh, apni marzi se jee,
-      aur apne saare dreams poore kar.
-    </p>
-  </section>
+    <!-- PHOTO -->
+    <section class="photo-section reveal">
 
-  <div class="signature">
-    Made by your brother,<br>
-    <strong>Hemant ✦</strong>
-  </div>
+      <div class="photo-frame">
 
-  <footer>Made with family vibes, not filmy vibes. 🌙</footer>
-</main>
+        <div class="photo-glow"></div>
 
-<audio id="song" src="sound.mp3" loop preload="auto"></audio>
+        <img src="photo.jpg" alt="Khyati" class="khyati-photo">
 
-<script>
-const song = document.getElementById("song");
-const musicBtn = document.getElementById("musicBtn");
-const surpriseBtn = document.getElementById("surpriseBtn");
-const surprise = document.getElementById("surprise");
+      </div>
 
-musicBtn.addEventListener("click", async () => {
-  if (song.paused) {
-    try {
-      await song.play();
-      musicBtn.textContent = "❚❚ Pause Song";
-    } catch (error) {
-      musicBtn.textContent = "Tap to Play Again";
-    }
-  } else {
-    song.pause();
-    musicBtn.textContent = "▶ Play Song";
-  }
-});
+    </section>
 
-song.addEventListener("play", () => {
-  musicBtn.textContent = "❚❚ Pause Song";
-});
 
-song.addEventListener("pause", () => {
-  musicBtn.textContent = "▶ Play Song";
-});
+    <!-- CHAPTER 3 -->
+    <section class="chapter reveal">
 
-surpriseBtn.addEventListener("click", () => {
-  const isOpen = surprise.classList.toggle("show");
-  surpriseBtn.textContent = isOpen
-    ? "🌟 Surprise Khul Gaya!"
-    : "✨ Surprise Kholo";
+      <div class="chapter-no">04 / THE REAL TALK</div>
 
-  if (isOpen) {
-    surprise.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest"
-    });
-    burstStars(22);
-  } else {
-    burstStars(8);
-  }
-});
+      <div class="message-card">
 
-// Small, lightweight floating star effects
-function burstStars(count) {
-  for (let i = 0; i < count; i++) {
-    const star = document.createElement("span");
-    star.className = "star";
-    star.textContent = ["✦", "✧", "⋆", "★"][i % 4];
-    star.style.left = (5 + Math.random() * 90) + "vw";
-    star.style.top = (48 + Math.random() * 40) + "vh";
-    star.style.fontSize = (10 + Math.random() * 15) + "px";
-    star.style.setProperty(
-      "--duration", (2 + Math.random() * 2) + "s"
-    );
-    document.body.appendChild(star);
-    star.addEventListener("animationend", () => star.remove());
-  }
-}
+        <h2 style="font-size: clamp(30px, 6vw, 48px);">
+          tujhe preshan ni krugaaa toh kise kruu tu hi bta
+        </h2>
 
-// Avoid running continuous decorative effects in the background.
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden) {
-    document.querySelectorAll(".star").forEach(star => star.remove());
-  }
-});
-</script>
+      </div>
+
+    </section>
+
+
+    <!-- FUNNY SECTION -->
+    <section class="fun-section reveal">
+
+      <div class="chapter-no">05 / OFFICIAL ANNOUNCEMENT</div>
+
+      <h2>Terms & Conditions</h2>
+
+      <div class="terms">
+
+        <p>✓ Ego temporarily suspended.</p>
+        <p>✓ Stupidity acknowledged.</p>
+        <p>✓ Apology officially submitted.</p>
+        <p>✓ Future arguments still permitted.</p>
+        <p>✓ Being annoying is still my birthright.</p>
+
+      </div>
+
+      <div class="stamp">
+        SORRY<br>
+        NOT SORRY<br>
+        ...OKAY SORRY.
+      </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+    <section class="final-section reveal" id="final">
+
+      <div class="final-star">✦</div>
+
+      <div class="chapter-no">06 / THAT'S ALL</div>
+
+      <h2>
+        Anyway,<br>
+        <span>I'm sorry.</span>
+      </h2>
+
+      <button class="final-btn" onclick="showSurprise()">
+        One last thing...
+      </button>
+
+      <div id="surprise" class="surprise">
+
+        <h2>♡</h2>
+
+      </div>
+
+      <div class="signature">
+        — Your outdated coder bhai.
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    
+  </footer>
+
+
+  <script src="script.js"></script>
+
 </body>
 </html>
